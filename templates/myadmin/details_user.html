@@ -1,0 +1,80 @@
+{% extends 'myadmin/layout.html' %}
+{%load static%}
+{% block content %}
+ <div class="col-md-12">
+        <div class="main-content">
+            <div class="breadcrumb-wrap mb-20">
+                <div class="d-md-flex d-block justify-content-between align-items-center">
+                    <div class="left">
+                        <h1>User Details</h1>
+                        
+                    </div>
+                    <div class="right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                <li class="breadcrumb-item"><i class="bi bi-caret-right"></i></li>
+                                <li class="breadcrumb-item active" aria-current="page">User Details</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+ <div class="main-content">
+            <div class="breadcrumb-wrap mb-20">
+                <div class="d-md-flex d-block justify-content-between align-items-center">
+
+<div class="panel mb-10">
+                        <div class="panel-heading">
+                            <span>User Details</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="card mb-3" style="max-width: 100%;">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="{%static 'myadmin/assets/images/user-icon.png'%}" class="img-fluid" alt="card image" style="height:100%;">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                             <div class="title-box">
+                                                <h2 class="card-title">ID : {{result.id}} </h2>
+                                            </div>
+                                            <div class="title-box">
+                                                <h2 class="card-title">First Name : {{result.user.first_name}}</h2>
+                                            </div>
+                                             <div class="title-box">
+                                                <h2 class="card-title">Last Name : {{result.user.last_name}}</h2>
+                                                
+                                            </div>
+                                            <div class="title-box">
+                                                <h2 class="card-title">E-mail Id  : {{result.user.email}}</h2>
+                                            </div>
+                                            <div class="title-box">
+                                                <h2 class="card-title">Contact No : {{result.phone_number}}</h2>
+                                            </div>
+                                            <div class="title-box">
+                                                <h2 class="card-title">Gender : {{result.gender}}</h2>
+                                            </div>
+                                            <div class="title-box">
+                                                <h2 class="card-title">Date Of Birth : {{result.date_of_birth}}</h2>
+                                            </div>
+                                            <div class="title-box">
+                                                <h2 class="card-title">Address : {{result.address}}</h2>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="main-content">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="panel mb-10">
+{%endblock%}

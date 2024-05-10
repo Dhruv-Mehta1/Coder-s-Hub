@@ -1,0 +1,66 @@
+{% extends 'myadmin/layout.html' %}
+
+{% block content %}
+<div class="col-md-12">
+        <div class="main-content">
+            <div class="breadcrumb-wrap mb-20">
+                <div class="d-md-flex d-block justify-content-between align-items-center">
+                    <div class="left">
+                        <h1>Manage Technology</h1>
+                        
+                    </div>
+                    <div class="right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Manage Technology</a></li>
+                                <li class="breadcrumb-item"><i class="bi bi-caret-right"></i></li>
+                                <li class="breadcrumb-item active" aria-current="page">View Technologys</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+<div class="main-content">
+ <div class="col-xl-12 col-lg-12">
+                    <div class="panel mb-10">
+                        <div class="panel-heading">
+                            <span>View All Technologys</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Technologys</th> 
+                                            <th>Date</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for r in result %}
+                                        <tr>
+                                            <td>{{r.id}}</td>
+                                            <td>{{r.tech_name}} </td>
+                                            <td>{{r.date}}</td>
+                                            <td><a href="/myadmin/edit_technology/{{r.id}}"><button type="button" class="btn btn-primary"  >Edit</button></td>
+                                            <td><a href="/myadmin/delete_technology/{{r.id}}"><button type="button" class="btn btn-primary">Delete</button></td>
+                                        </tr>
+                                        {% endfor %}
+                                        
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+  <div class="col-xl-12 col-lg-12">
+                    <div class="panel mb-10">
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'user/layout.html' %}
+{%load static%}
+
+{%block content%}
+<div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold mb-2">Job Details</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="index.html">Job</a></li>
+                     <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="false">
+                    <li><a href="/user/view_queries">Applay</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Job Details</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div style="margin: 8px auto; display: block; text-align:center;">
+<h3 class="font-weight-bold mb-md-5 mb-4">View More Details Here!!</h3>
+<!---728x90--->
+</div>
+
+
+        <div class="container py-lg-5 py-4">
+            <div class="row align-items-center">
+                <div class="col-md-4 content-photo order-md-first order-last">
+                    <a href="#image"><img src="{%static 'user/assets/images/home-ab.png'%}" class="img-fluid" alt="content-photo"></a>
+                </div>
+                <div class="col-md-8 content-left mb-md-0 mb-5 pl-lg-5 order-md-last order-first">
+                    <div class="card" style="width: 40rem;">
+                       
+                        
+                        <div class="card-body">
+                            <h6 class="card-title">Job ID : {{result.id}}</h5>
+                            <hr>
+                            <h6 class="card-title">Title : {{result.Tite}}</h5>
+                            <hr>
+                            
+                            <h6>Job Type :{{result.Job_type}}</h6>
+                            <hr>
+                            <h6>Location :{{result.Location}}</h6>
+                            <hr>
+                            <h6>No Of Vacancy : {{result.No_of_vacancy}}</h6>
+                            <hr>
+                            <h6>Experience : {{result.Experience}}</h6>
+                            <hr>
+                            <h6 class="card-title">Posted Date : {{result.Date}}</h5>
+                            <hr>
+                            <h6 class="card-title">Company Name : {{result.user.username}}</h5>
+                            <hr>
+                            <h6>Description :</h6>
+                            <p class="card-text">{{result.Description}}</p>
+                            
+                            <a class="btn button-style mt-lg-5 mt-4" href="/user/apply_now/{{result.id}}">Apply Now </a>
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+{% endblock %}

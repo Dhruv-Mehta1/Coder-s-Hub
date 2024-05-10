@@ -1,0 +1,93 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{%static 'user/assets2/fonts/material-icon/css/material-design-iconic-font.min.css'%}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{%static 'user/assets2/css/style.css'%}">
+</head>
+<body style="background-color: royalblue ;">
+<section class="signup">
+            <div class="container">
+                <h2 align="center" style="padding-top: 20px; padding-bottom: 0px;">Coder's Hub</h2>
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form method="POST" action="/user/user_store" class="register-form" id="register-form">
+                            {% csrf_token %}
+                            
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="fname" id="fname" placeholder="First Name" required />
+                            </div>
+                             <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="lname" id="lname" placeholder="Last Name" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="number" id="number" placeholder="Phone No" required />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="agree-term" class="label-agree-term"><h4>Gender : </h4></label>
+                                <input type="radio" name="gender" id="gender" value="male" class="agree-term" required /> Male
+                                <input type="radio" name="gender" id="gender" value="female" class="agree-term" />Female
+                                <input type="radio" name="gender" id="gender" class="agree-term" value="other" />Other<hr>
+                               
+                            </div>
+                            <label for="agree-term" class="label-agree-term"><h4>Date Of Birth : </h4></label>
+                            <div class="form-group">
+
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="date" name="dob" id="dob" placeholder="Date Of Birth" required />
+                            </div>
+                            <div class="form-group">
+                                 <label for="agree-term" class="label-agree-term"><h4>Address : </h4></label>
+                                 <textarea class="agree-term" id="address" name="address" placeholder="Enter Your Address" rows="2" style="border-radius: 5px; width: 295px; height: 50px;"required></textarea><hr>
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="uname" id="uname" placeholder="User Name" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="password" placeholder="Password" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="submit" id="submit" class="form-submit" value="Register"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="{%static 'user/assets2/images/signup-image.jpg'%}" alt="sing up image"></figure>
+                        <a href="/user/login_user" class="signup-image-link">I am already member</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<script src="{%static 'user/assets2/vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{%static 'user/assets2/js/main.js'%}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

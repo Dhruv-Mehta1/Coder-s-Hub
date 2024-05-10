@@ -1,0 +1,70 @@
+{% extends 'myadmin/layout.html' %}
+
+{% block content %}
+<div class="col-md-12">
+        <div class="main-content">
+            <div class="breadcrumb-wrap mb-20">
+                <div class="d-md-flex d-block justify-content-between align-items-center">
+                    <div class="left">
+                        <h1>Users</h1>
+                       
+                    </div>
+                    <div class="right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Deshboard</a></li>
+                                <li class="breadcrumb-item"><i class="bi bi-caret-right"></i></li>
+                                <li class="breadcrumb-item active" aria-current="page">Users</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+<div class="main-content">
+ <div class="col-xl-12 col-lg-12">
+                    <div class="panel mb-10">
+                        <div class="panel-heading">
+                            <span>Users</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>User_ID</th>
+                                            <th>First_Name</th> 
+                                            <th>Last_Name</th>
+                                            <th>Email</th>
+                                           
+                                            
+                                            <th>Contact</th>
+                                            <th>Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for row in result %}
+                                        <tr>
+                                            <td>{{row.id}}</td>
+                                            <td>{{row.user.first_name}}</td>
+                                            <td>{{row.user.last_name}}</td>
+                                            <td>{{row.user.email}}</td>
+                                            <td>{{row.phone_number}}</td>
+                                            <td><a type="button" class="btn btn-primary" href="/myadmin/details_user/{{row.id}}">Details</a></td>
+                                        </tr>
+                                        {% endfor %}
+                                        
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+  <div class="col-xl-12 col-lg-12">
+                    <div class="panel mb-10">
+{%endblock%}

@@ -1,0 +1,78 @@
+{% extends 'user/layout.html' %}
+{%load static%}
+
+{%block content%}
+<div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold mb-2">Post Queries</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="index.html">Query</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Post Queries</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div style="margin: 8px auto; display: block; text-align:center;">
+
+<!---728x90--->
+</div>
+
+
+<div class="mx-auto pt-lg-4 pt-md-5 pt-4" style="max-width:1000px">
+                <div class="row contact-block">
+                    <div class="col-md-5 contact-left">
+                        <h3 class="font-weight-bold mb-md-5 mb-4">Post Queries</h3>
+                        <div class="cont-details">
+                            
+                           
+                            
+                            <div class="col-lg-10 left-wthree-img mt-lg-0 mt-5 order-lg-first order-last mx-0 p-5">
+                    <img src="{%static 'user/assets/images/service1.png'%}" alt="" class="img-fluid radius-image" style="height: 300px; width: 500px;">
+                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 contact-right mt-md-0 mt-4">
+                        <form action="/user/post_queries_store" method="post" class="signin-form" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="input-grids">
+                                <label>Query Title</label>
+                                <input type="text" name="title" id="title" placeholder="Your Name*" class="contact-input" required="">
+                            </div>
+                            <div class="form-group ">
+                                  <label for="inputState">Select Technology</label>
+                                  <select id="inputState" id="tech" name="tech" class="form-control" required>
+                                    <option selected value="">Choose...</option>
+                                    {% for t in tech %}
+                                    <option value="{{t.id}}" >{{t.tech_name}}</option>
+                                    {% endfor %}
+                                  </select>
+                            </div>
+                            <div class="form-group ">
+                                  <label for="inputState">Select Sub-Technology</label>
+                                  <select id="subtech" name="subtech" class="form-control" required>
+                                    <option selected value="">Choose...</option>
+                                    {% for s in subtech %}
+                                    <option value="{{s.id}}">{{s.subtech_name}}</option>
+                                     {% endfor %}
+                                  </select>
+                            </div>
+
+                            <div class="form-input">
+                                <label>Query Description</label>
+                                <textarea name="desc" id="desc" placeholder="Type your message here*" required=""></textarea>
+                            </div>
+
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="f" name="f" required>
+                              <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                            <br></br>
+                            <button class="btn button-style" type="submit" id="subtech" name="submit" value="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+ 
+{%endblock%}

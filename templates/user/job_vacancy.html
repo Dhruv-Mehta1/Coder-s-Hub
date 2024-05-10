@@ -1,0 +1,63 @@
+{% extends 'user/layout.html' %}
+{%load static%}
+
+{%block content%}
+<div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold mb-2">View job Vacancys</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/user">Job</a></li>
+                     <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="false">
+                     
+                    
+
+                    <li class="active"></span>View job Vacancys</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div style="margin: 8px auto; display: block; text-align:center;">
+<h3 class="font-weight-bold mb-md-5 mb-4">View All job Vacancys Are Here!!</h3>
+<!---728x90--->
+</div>
+
+<div class="container-xxl py-5">
+            <div class="container">
+                {% for row in result %}
+                <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                   
+                    <div class="tab-content">
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                            <div class="job-item p-4 mb-4"style="border:2px solid black; border-radius: 20px;">
+                                <div class="row g-4">
+                                    <div class="col-sm-12 col-md-8 d-flex align-items-center " >
+                                        <img class="flex-shrink-0 img-fluid border rounded" src= "{%static 'user/assets/images/job1.jpg'%}" alt="" style="width: 80px; height: 80px;">
+                                        <div class="text-start ps-4">
+                                            <h5 class="mb-3">{{row.Tite}}</h5>
+                                            <span class="text-truncate me-3 m-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{row.Location}}</span>
+                                            <span class="text-truncate me-3 m-2"><i class="far fa-clock text-primary me-2"></i>{{row.Job_type}}</span>
+                                            <span class="text-truncate me-0 m-2"><i class="far fa-money-bill-alt text-primary me-2"></i>{{row.Min_salary}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                                        <div class="d-flex mb-3">
+                                           <a class="btn button-style mt-lg-2 mt-4" href="/user/job_details/{{row.id}}">Apply</a>
+                                        </div>
+                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Date Line: {{row.Date}}</small>
+                                    </div>
+                                </div>
+                            </div>
+{%endfor%}
+
+                           
+                            
+                            <a class="btn btn-primary py-3 px-5" href="">Browse More Jobs</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

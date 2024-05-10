@@ -1,0 +1,103 @@
+{% extends 'user/layout.html' %}
+{%load static%}
+
+{%block content%}
+<div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold mb-2">Post Project</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="#">Project</a></li>
+                     
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Post Project</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div style="margin: 8px auto; display: block; text-align:center;">
+<h3 class="font-weight-bold mb-md-5 mb-4">Post Project Here!!</h3>
+<!---728x90--->
+</div>
+
+
+<section class="w3l-about2 py-2">
+        <div class="container py-md-2 py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-5 about-2-secs-right">
+                    <img src="{%static 'user/assets/images/about.png'%}" alt="" class="img-fluid img-responsive">
+                </div>
+                <div class="col-lg-7 about-2-secs pl-lg-5 mb-lg-0 mb-4">
+                   <form method="post" action="/user/post_project_store" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Project Title</label>
+                        <input type="text" class="form-control" id="title1" aria-describedby="emailHelp" placeholder="Enter Project Title" name="title1" required>
+                    </div><div class="row">
+                     <div class="form-group col-6">
+                                  <label for="inputState">Select Technology</label>
+                                  <select id="inputState" class="form-control" id="tech" name="tech" required>
+                                    <option selected value="">Choose...</option>
+                                    {% for t in tech %}
+                                    <option value="{{t.id}}">{{t.tech_name}}</option>
+                                    {% endfor %}
+                                  </select>
+
+                            </div>
+                            <div class="form-group col-6">
+                                  <label for="inputState">Select Sub-Technology</label>
+                                  <select id="inputState" class="form-control" id="subtech" name="subtech" required>
+                                    <option selected value="">Choose...</option>
+                                     {% for s in subtech %}
+                                    <option value="{{s.id}}">{{s.subtech_name}}</option>
+                                    {% endfor %}
+                                  </select>
+                            </div>
+                            </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Project Abstract</label>
+                        <input type="text" class="form-control" id="abstract" name="abstract" aria-describedby="emailHelp" placeholder="Enter Project Abstract" required>
+                    </div>
+
+                    <div class="form-input">
+                                <label>Description</label>
+                              <textarea class="form-control" placeholder="Enter Your Solution" rows="2" id="desc" name="desc" required></textarea>
+                    </div>
+
+                    <div class="row">
+                     <div class="form-group col-6">
+                                  <label for="inputState">Database Name</label>
+                                  <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Enter Database Name" id="database" name="database" required>
+                            </div>
+                            <div class="form-group col-6">
+                                  <label for="inputState">Devlopement Tools</label>
+                                   <input type="text" class="form-control" id="tool" name="tool" aria-describedby="emailHelp" placeholder="Enter Devlopement Tools" required>
+                            </div>
+                            </div>
+
+                              <div class="row">
+                     <div class="form-group col-6">
+                                  <label for="inputState">Project Document</label>
+                                   <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="doc1" name="doc1" required>
+                              <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                            </div>
+                            <div class="form-group col-6">
+                                  <label for="inputState">Project Source code</label>
+                                    <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="source" name="source" required>
+                              <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                            </div>
+                            </div>
+                             <button class="btn button-style" id="submit" name="submit" value="submit">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

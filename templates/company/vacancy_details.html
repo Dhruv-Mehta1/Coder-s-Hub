@@ -1,0 +1,82 @@
+{% extends 'company/layout.html' %}
+{%load static%}
+{% block content %}
+ <div class="col-md-12">
+        <div class="main-content">
+            <div class="breadcrumb-wrap mb-20">
+                <div class="d-md-flex d-block justify-content-between align-items-center">
+                    <div class="left">
+                        <h1>View Vacancys</h1>
+                        
+                    </div>
+                    <div class="right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                <li class="breadcrumb-item"><i class="bi bi-caret-right"></i></li>
+                                <li class="breadcrumb-item active" aria-current="page">View Vacancys</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+ <div class="main-content">
+            <div class="breadcrumb-wrap mb-20">
+                <div class="d-md-flex d-block justify-content-between align-items-center">
+
+<div class="panel mb-10">
+                        <div class="panel-heading">
+                            <span>Vacancy Details</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="card mb-3" style="max-width: 100%;">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="{%static 'company/assets/images/job.jpg'%}" class="img-fluid" alt="card image" style="height:100%;">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                             <div class="title-box">
+                                                <h2 class="card-title">ID : {{result.id}} </h2>
+                                            </div>
+                                            <div class="title-box">
+                                                <h2 class="card-title">Job title : {{result.Tite}}</h2>
+                                            </div>
+                                             <div class="title-box">
+                                                <h2 class="card-title">Description : </h2>
+                                                <p>{{result.Description}}</p>
+                                            </div>
+                                            <div class="title-box">
+                                                <h2 class="card-title">Job type : {{result.Job_type}}</h2>
+                                            </div>
+                                            <div class="title-box">
+                                                <h2 class="card-title">Location : {{result.Location}}</h2>
+                                            </div>
+                                            <div class="title-box">
+                                                <h2 class="card-title">No Of Vacancy : {{result.No_of_vacancy}}</h2>
+                                            </div>
+                                            <div class="title-box">
+                                                <h2 class="card-title">Min Salary : {{result.Min_salary}}</h2>
+                                            </div>
+                                            <div class="title-box">
+                                                <h2 class="card-title">Experience : {{result.Experience}}</h2>
+                                            </div>
+                                            <div class="title-box">
+                                                <h2 class="card-title">Date : {{result.Date}}</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="main-content">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="panel mb-10">
+{%endblock%}

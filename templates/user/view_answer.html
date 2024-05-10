@@ -1,0 +1,58 @@
+{% extends 'user/layout.html' %}
+{%load static%}
+
+{%block content%}
+<div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold mb-2">View Answer</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/user">Query</a></li>
+                     <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="false">
+                      <li><a href="/user/view_queries">View Queries</a></li>
+                     <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="false">
+                    <li><a href="/user/more_details">More Details</a></li>
+
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>View Answer</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div style="margin: 8px auto; display: block; text-align:center;">
+<h3 class="font-weight-bold mb-md-5 mb-4">View All Answer Here!!</h3>
+<!---728x90--->
+</div>
+
+
+<div class="mx-auto pt-lg-4 pt-md-5 pt-4" style="max-width:1000px">
+                <div class="row contact-block">
+                  <table class="table table-striped  ">
+                      <thead>
+                        
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">User Name</th>
+                          <th scope="col">Answer Description</th>
+                          <th scope="col">Post Date</th>
+                        </tr>
+                        
+                      </thead>
+                      <tbody>
+                        {% for row in result%}
+                        <tr>
+                          <th scope="row">{{row.id}}</th>
+                          <td>{{row.user.username}}</td>
+                          <td>{{row.answer}}</td>
+                          <td>{{row.date}}</td>
+                        </tr>
+                        {% endfor %}
+                       
+                        
+                      </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+ 
+{%endblock%}

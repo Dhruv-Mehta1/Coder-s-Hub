@@ -1,0 +1,62 @@
+{% extends 'user/layout.html' %}
+{%load static%}
+
+{%block content%}
+
+<div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold mb-2">Forgot Password</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="#">Log in</a></li>
+                     
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Forgot Password</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div style="margin: 8px auto; display: block; text-align:center;">
+<h3 class="font-weight-bold mb-md-5 mb-4">Forgot Password Here!!</h3>
+<!---728x90--->
+</div>
+
+
+<section class="w3l-about2 py-2">
+        <div class="container py-md-2 py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-5 about-2-secs-right">
+                    <img src="{%static 'user/assets/images/about.png'%}" alt="" class="img-fluid img-responsive">
+                </div>
+                <div class="col-lg-7 about-2-secs pl-lg-5 mb-lg-0 mb-4">
+                   <form method="post" action="/user/forgot_password_check">
+                    {% csrf_token %}
+                  
+                        
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">E-mail</label>
+                        <input type="text" class="form-control" id="wmail" aria-describedby="emailHelp" placeholder="Enter E-mail Here" name="email" required>
+                        </div>
+                         
+                   
+                    
+                    
+
+                   
+
+                              <div class="row">
+                     <div class="form-group ">
+                                 
+                            
+                           
+                            </div>
+                            </div>
+                             <button class="btn button-style" type="submit" id="submit"name ="submit" value="submit" >Submit</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

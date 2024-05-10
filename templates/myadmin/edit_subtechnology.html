@@ -1,0 +1,70 @@
+{% extends 'myadmin/layout.html' %}
+
+{% block content %}
+<div class="col-md-12">
+        <div class="main-content">
+            <div class="breadcrumb-wrap mb-20">
+                <div class="d-md-flex d-block justify-content-between align-items-center">
+                    <div class="left">
+                        <h1>Manage Sub-Technology</h1>
+                        
+                    </div>
+                    <div class="right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Manage Sub-Technology</a></li>
+                                <li class="breadcrumb-item"><i class="bi bi-caret-right"></i></li>
+                                <li class="breadcrumb-item active" aria-current="page">Edit Sub-Technologys</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+<div class="main-content">
+  <div class="col-xl-12 col-lg-12">
+                    <div class="panel mb-10">
+                        <div class="panel-heading">
+                            <span>Edit Sub-Technology</span>
+                        </div>
+                        <div class="panel-body">
+                             <form method="post" action="/myadmin/update_subtechnology/{{result.id}}" enctype="multipart/form-data">
+                                 {%csrf_token%}
+                                 <div class="row mb-3">
+                                    <label for="inputPassword4" class="col-sm-4 col-form-label">Select Technology</label>
+                                    <div class="form-group has-icon-left col-sm-8">
+                                <div class="col-12">
+                                
+                                    <select  name="techid" class="form-select form-control" id="Tech_id">
+                                        <option  value="">Choose...</option>
+                                        {% for row in technology %}
+                                        <option value="{{row.id}}" {% if result.tech_id == row.id %} selected {% endif %}>{{row.tech_name}}</option>
+                                        {% endfor %}
+                                    
+                                    </select>
+                                </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="inputEmail4" class="col-sm-4 col-form-label">Add Sub-Technology</label>
+                                    <div class="form-group has-icon-left col-sm-8">
+                                        <input type="text" name="Subtech"class="form-control" id="Subtech" placeholder="Sub-Technology" value="{{result.subtech_name}}" >
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-envelope-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            
+                                <div class="btn-box justify-content-end">
+                                    <button type="submit" class="btn btn-primary" name="submit" value="submit" id="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+{%endblock%}

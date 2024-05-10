@@ -1,0 +1,70 @@
+{% extends 'user/layout.html' %}
+{%load static%}
+
+{%block content%}
+<div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold mb-2">Project Details</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/user/view_project">Project</a></li>
+                     <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="false">
+                    <li><a href="/user/view_project">View Projects</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Project Details</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div style="margin: 8px auto; display: block; text-align:center;">
+<h3 class="font-weight-bold mb-md-5 mb-4">View Project Details Here!!</h3>
+<!---728x90--->
+</div>
+
+
+        <div class="container py-lg-5 py-4">
+            <div class="row align-items-center">
+                <div class="col-md-4 content-photo order-md-first order-last">
+                    <a href="#image"><img src="{%static 'user/assets/images/home-ab.png'%}" class="img-fluid" alt="content-photo"></a>
+                </div>
+                <div class="col-md-8 content-left mb-md-0 mb-5 pl-lg-5 order-md-last order-first">
+                    <div class="card" style="width: 40rem;">
+                        
+                        
+                        <div class="card-body">
+                            <h6 class="card-title">Project ID : {{result.id}}</h5>
+                            <hr>
+                            <h6 class="card-title">Title : {{result.title}}</h5>
+                            <hr>
+                            <h6 class="card-title">Technology : {{result.tech.tech_name}}</h5>
+                            <hr>
+                            <h6 class="card-title">Database : {{result.database}}</h5>
+                            <hr>
+                            <h6 class="card-title">Tools : {{result.tool}}</h5>
+                            <hr>
+                            <h6 class="card-title">Abstract : {{result.abstract}}</h5>
+                            <hr>
+                            <h6>Description :</h6>
+                            <p class="card-text">{{result.description}}</p>
+                            <hr>
+                            <div class="container" >
+                            <div class="row">
+                                <div class="row-6 mx-5" >
+                                     <h6 align="center">Project Documents</h6>
+                                <a class="btn button-style mt-lg-3 mt-4" href="/upload/upload/{{result.document}}" download="">Download</a>
+                                </div>
+                                <hr>
+                            <div class="row-6 mx-5">
+                                <h6 align="center">Source Code</h6>
+                            <a class="btn button-style mt-lg-3 mt-4" href="/upload/upload/{{result.sourcecode}}" download="">Download</a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+{% endblock %}

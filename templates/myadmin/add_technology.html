@@ -1,0 +1,53 @@
+{% extends 'myadmin/layout.html' %}
+
+{% block content %}
+<div class="col-md-12">
+    
+        <div class="main-content">
+            <div class="breadcrumb-wrap mb-20">
+                <div class="d-md-flex d-block justify-content-between align-items-center">
+                    <div class="left">
+                        <h1>Manage Technology</h1>
+                        
+                    </div>
+                    <div class="right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Manage Technology</a></li>
+                                <li class="breadcrumb-item"><i class="bi bi-caret-right"></i></li>
+                                <li class="breadcrumb-item active" aria-current="page">Add Technology</li>
+                            
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+<div class="main-content">
+  <div class="col-xl-12 col-lg-12">
+                    <div class="panel mb-10">
+                        <div class="panel-heading">
+                            <span>Add New Technology</span>
+                        </div>
+                        <div class="panel-body">
+                            <form method="post" action="/myadmin/add_technology_store">
+                                 {% csrf_token %}
+                                <div class="row mb-3">
+                                    <label for="inputEmail4" class="col-sm-4 col-form-label">Add Technology</label>
+                                    <div class="form-group has-icon-left col-sm-8">
+                                        <input type="text" class="form-control" id="tech_name" placeholder="Add Technology" name="tech_name">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-envelope-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="btn-box justify-content-end">
+                                    <button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+{%endblock%}

@@ -1,0 +1,139 @@
+{% extends 'myadmin/layout.html' %}
+
+{% block content %}
+<div class="main-content">
+  <div class="col-xl-12 col-lg-12">
+                    <div class="panel mb-10">
+                        <div class="panel-heading">
+                            <span>Horizontal form with icons</span>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                <div class="row mb-3">
+                                    <label for="inputName2" class="col-sm-4 col-form-label">Full Name</label>
+                                    <div class="form-group has-icon-left col-sm-8">
+                                        <input type="text" class="form-control" id="inputName2" placeholder="Full Name">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-person-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail4" class="col-sm-4 col-form-label">Email Address</label>
+                                    <div class="form-group has-icon-left col-sm-8">
+                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email Address">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-envelope-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputMobile2" class="col-sm-4 col-form-label">Mobile</label>
+                                    <div class="form-group has-icon-left col-sm-8">
+                                        <input type="tel" class="form-control" id="inputMobile2" placeholder="Mobile">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-telephone-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword4" class="col-sm-4 col-form-label">Password</label>
+                                    <div class="form-group has-icon-left col-sm-8">
+                                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-key-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                 <div class="row mb-3">
+                                    <label for="inputPassword4" class="col-sm-4 col-form-label">Select</label>
+                                    <div class="form-group has-icon-left col-sm-8">
+                                <div class="col-12">
+                                    <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                                    <select class="form-select form-control" id="inlineFormSelectPref">
+                                        <option selected hidden>Choose...</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-key-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="inputPassword4" class="col-sm-4 col-form-label">Comments</label>
+                                    <div class="form-group has-icon-left col-sm-8">
+                                 <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Comments</label>
+                            </div>
+                                       
+                                    </div>
+                                </div>
+
+                                 <div class="row mb-3">
+                                    <label for="inputPassword4" class="col-sm-4 col-form-label">chack</label>
+                                     <div class="col-xs-12 col-sm-6">
+                                    <div class="inline-heading">
+                                        <h6>Checkboxes & Radios</h6>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="checkbox2" value="">
+                                            <label for="checkbox2">
+                                                Option one
+                                            </label>
+                                        </div>
+                                       <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="checkbox2" value="">
+                                            <label for="checkbox2">
+                                                Option two
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="inputPassword4" class="col-sm-4 col-form-label">radio</label>
+                                     <div class="col-xs-12 col-sm-6">
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                            <label for="optionsRadios1">
+                                                Option one
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                            <label for="optionsRadios2">
+                                                Option two
+                                            </label>
+                                        </div>
+                                     
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-8 offset-sm-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck2">
+                                            <label class="form-check-label" for="gridCheck2">
+                                                Remember Me
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-box justify-content-end">
+                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+{%endblock%}

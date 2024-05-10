@@ -1,0 +1,56 @@
+{% extends 'user/layout.html' %}
+{%load static%}
+
+{%block content%}
+<div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold mb-2">View Queries</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="index.html">Querys</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>View Queries</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div style="margin: 8px auto; display: block; text-align:center;">
+<h3 class="font-weight-bold mb-md-5 mb-4">View All Queries Here!!</h3>
+<!---728x90--->
+</div>
+
+
+<div class="mx-auto pt-lg-4 pt-md-5 pt-4" style="max-width:1000px">
+                <div class="row contact-block">
+                  <table class="table table-striped  ">
+                      <thead>
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Title</th>
+                          <th scope="col">Description</th>
+                          <th scope="col">Technology</th>
+                          <th scope="col">Sub-Technology</th>
+                          <th scope="col">Post Date</th>
+                          <th scope="col">More Details</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for row in result %}
+                        <tr>
+                          <th scope="row">{{row.id}}</th>
+                          <td>{{row.title}}</td>
+                          <td>{{row.description}}</td>
+                          <td>{{row.tech.tech_name}}</td>
+                          <td>{{row.subtech.subtech_name}}</td>
+                          <td>{{row.date}}</td>
+                          <td><a class="btn button-style mt-lg-1 mt-4" href=" /user/more_details/{{row.id}}">Details</a></td>
+                        </tr>
+                        {% endfor %}
+                          
+                      </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+ 
+{%endblock%}

@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coder's Hub | login </title>
+
+    <link rel="stylesheet" href="{%static 'company/assets/css/animate.min.css'%}">
+    <link rel="stylesheet" href="{%static 'company/assets/css/fontawesome.min.css'%}">
+    <link rel="stylesheet" href="{%static 'company/assets/bootstrap-icon/bootstrap-icons.css'%}">
+    <link rel="stylesheet" href="{%static 'company/assets/css/jquery.mCustomScrollbar.min.css'%}">
+    <link rel="stylesheet" href="{%static 'company/assets/css/sweetalert.css'%}">
+    <link rel="stylesheet" href="{%static 'company/assets/css/toastify.min.css'%}">
+    <link rel="stylesheet" href="{%static 'company/assets/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{%static 'company/assets/css/style.css'%}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="form-area">
+            <div class="form-row">
+                <div class="form-panel">
+                    <div class="logo mb-5">
+                    	<h1>Coder's Hub</h1>
+                        <!--<img src="{%static 'company/assets/images/logo.png'%}" alt="logo">-->
+                        <p class="text-center mt-20"><span class="d-block fw-bold mb-10 fs-6">Hello! let's get started</span> Sign in to continue.</p>
+                    </div>
+                    <form class="mb-4" action="/company/login_company_chack" method="post">
+                    	{%csrf_token%}
+                        <div class="mb-4">
+                            <div class="form-group has-icon-left">
+                                <input type="text" class="form-control form-control-lg" placeholder="@username" id="uname" name="uname">
+                                <div class="form-control-icon">
+                                    <i class="bi bi-person-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="form-group has-icon-left">
+                                <input type="password" class="form-control form-control-lg" placeholder="Password" id="password" name="password">
+                                <div class="form-control-icon">
+                                    <i class="bi bi-key-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-check mb-4">
+                            <input type="checkbox" id="remember" class="form-check-input">
+                            <label for="remember">Remember Me</label>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-primary w-100" id="submit" name="submit" value="submit">Sign In</button>
+                    </form>
+                    <p>Don't have an account? <a href="/company/registation_company/">Sign up</a> here</p>
+                    <a href="/company/forgot">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{%static 'company/assets/js/jquery-3.6.0.min.js'%}"></script>
+    <script src="{%static 'company/assets/js/jquery.mCustomScrollbar.concat.min.js'%}"></script>
+    <script src="{%static 'company/assets/js/apexcharts.js'%}"></script>
+    <script src="{%static 'company/assets/js/sweetalert.min.js'%}"></script>
+    <script src="{%static 'company/assets/js/toastify-js.js'%}"></script>
+    <script src="{%static 'company/assets/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{%static 'company/assets/js/main.js'%}"></script>
+</body>
+</html>

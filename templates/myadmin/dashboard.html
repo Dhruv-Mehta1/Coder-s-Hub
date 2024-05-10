@@ -1,0 +1,92 @@
+{% extends 'myadmin/layout.html' %}
+<!-- main block contant -->
+{% load static %}
+
+{% block content %}
+        <div class="col-md-12">
+        <div class="main-content">
+            <div class="breadcrumb-wrap mb-20">
+                <div class="d-md-flex d-block justify-content-between align-items-center">
+                    <div class="left">
+                        <h1>Deshbord</h1>
+                        <p>Wellcome, {{request.user.first_name}} {{request.user.last_name}} Coder's Hub</p>
+                    </div>
+                    <div class="right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                <li class="breadcrumb-item"><i class="bi bi-caret-right"></i></li>
+                                <li class="breadcrumb-item active" aria-current="page"></li>
+                            </ol>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        <div class="main-content">
+            <div class="top-boxes mb-10">
+                <div class="row g-10">
+                    
+                    <div class="col-xl-3 col-lg-3 col-sm-6">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <div class="part-icon bg-info">
+                                    <i class="bi bi-person-fill"></i>
+                                </div>
+                                <div class="part-txt">
+                                    <a href="/myadmin/users"><h4><span>User's</span></h4></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-sm-6">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <div class="part-icon bg-success">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                                <div class="part-txt">
+                                   <a href="/myadmin/view_company"> <h4><span>Company</span></h4></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-sm-6">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <div class="part-icon bg-danger">
+                                    <i class="bi bi-journal-code"></i>
+                                </div>
+                                <div class="part-txt">
+                                   <a href="/myadmin/view_project"> <h4><span>Projects</span></h4></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-sm-6">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <div class="part-icon bg-primary">
+                                    <i class="bi bi-box-arrow-left"></i>
+                                </div>
+                                <div class="part-txt">
+                                  <a href="/myadmin/logout/">  <h4><span>Log-Out</span></h4></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+       
+          
+        </div>
+    </div>
+</div>
+
+<div class="main-content">
+  <div class="col-xl-12 col-lg-12">
+                    <div class="panel mb-10">
+{% endblock %}
